@@ -232,10 +232,11 @@ export default function Home() {
   /* Mobile menu */
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
-    { label: "Services",     href: "#services" },
-    { label: "Processus",    href: "#process"  },
-    { label: "Réalisations", href: "#work"     },
-    { label: "Contact",      href: "#contact"  },
+    { label: "Services",       href: "#services"         },
+    { label: "Expertises",     href: "/notre-expertise"  },
+    { label: "Processus",      href: "#process"          },
+    { label: "Réalisations",   href: "#work"             },
+    { label: "Contact",        href: "#contact"          },
   ];
 
   /* Hero word cycling */
