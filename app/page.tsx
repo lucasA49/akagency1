@@ -484,17 +484,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ MARQUEE ══ */}
-      <div className="overflow-hidden border-y py-5" style={{ borderColor: "var(--border)", background: "var(--glass-bg)" }}>
-        <div className="marquee-track">
-          {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
-            <span key={i} className="inline-flex items-center gap-2 mx-6 text-sm text-slate-500 whitespace-nowrap font-medium">
-              <span className="w-1 h-1 rounded-full bg-gradient-to-r from-blue-400 to-violet-400" aria-hidden="true" />
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* ══ SERVICES ══ */}
       <section id="services" className="px-4 sm:px-6 py-16 md:py-28">
