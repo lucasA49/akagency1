@@ -148,10 +148,6 @@ const IconX = () => (
 
 /* ─── Data ─── */
 const HERO_WORDS = ["mémorables.", "performantes.", "qui convertissent."];
-const TECH_STACK = [
-  "React", "Next.js", "TypeScript", "Figma", "Tailwind CSS",
-  "Node.js", "Shopify", "Webflow", "Framer", "Vercel", "PostgreSQL", "Three.js",
-];
 const services = [
   { icon: <IconLayout />, title: "Web Design", desc: "Interfaces pixel-perfect qui convertissent. Chaque détail pensé avec intention, de la typographie aux micro-interactions." },
   { icon: <IconCode />, title: "Développement", desc: "Code propre, performant et scalable. Applications Next.js ultra-rapides, optimisées Core Web Vitals." },
