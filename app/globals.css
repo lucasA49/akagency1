@@ -108,6 +108,13 @@ section[id] {
 [data-theme="light"] .mk-cell    { background: rgba(0,0,0,0.04);  border-color: rgba(0,0,0,0.07); }
 [data-theme="light"] .mk-cta-ghost { border-color: rgba(0,0,0,0.12); }
 
+/* Glass — fond blanc avec ombre subtile en light mode */
+[data-theme="light"] .glass {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
 /* Orbes — plus visibles sur fond clair */
 .orb { transition: opacity 0.4s ease; }
 [data-theme="light"] .orb { opacity: 0.3 !important; }
@@ -237,6 +244,24 @@ section[id] {
     transform 0.75s cubic-bezier(0.22,1,0.36,1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Scroll hint chevrons ─── */
+@keyframes scrollChevron {
+  0%, 100% { opacity: 0.15; transform: translateX(0); }
+  50%       { opacity: 1;    transform: translateX(3px); }
+}
+.animate-scroll-chevron {
+  animation: scrollChevron 1.4s ease-in-out infinite;
+}
+
+/* ─── Expertise word cycle ─── */
+@keyframes expertiseWordIn {
+  0%   { opacity: 0; transform: translateY(60%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-expertise-word {
+  animation: expertiseWordIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
 /* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {

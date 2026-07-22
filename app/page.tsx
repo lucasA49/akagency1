@@ -148,6 +148,7 @@ const IconX = () => (
 
 /* ─── Data ─── */
 const HERO_WORDS = ["mémorables.", "performantes.", "qui convertissent."];
+const EXPERTISE_WORDS = ["SEO", "Web Design", "E-commerce", "Développement", "Site Vitrine"];
 const services = [
   { icon: <IconLayout />,  title: "Web Design",        desc: "Interfaces pixel-perfect qui convertissent. Chaque détail pensé avec intention, de la typographie aux micro-interactions.", color: "#60a5fa", href: "/notre-expertise/web-design"        },
   { icon: <IconCode />,    title: "Développement",     desc: "Code propre, performant et scalable. Applications Next.js ultra-rapides, optimisées Core Web Vitals.",                 color: "#a78bfa", href: "/notre-expertise/developpement-web" },
@@ -155,10 +156,26 @@ const services = [
   { icon: <IconChart />,   title: "Stratégie digitale",desc: "Analyse, positionnement et roadmap mesurable. Des décisions basées sur les données, pas des suppositions.",            color: "#fb923c", href: "/notre-expertise"                   },
 ];
 const processSteps = [
-  { num: "01", title: "Découverte", desc: "Immersion dans votre univers, vos objectifs et votre marché cible pour poser des bases solides." },
-  { num: "02", title: "Design", desc: "Maquettes et prototypes itératifs. Vous validez chaque étape avant que le développement commence." },
-  { num: "03", title: "Développement", desc: "Code robuste et scalable. Tests rigoureux, performances optimisées avant chaque livraison." },
-  { num: "04", title: "Lancement", desc: "Mise en ligne soignée avec suivi des métriques et support réactif post-launch." },
+  {
+    num: "01", title: "Découverte", color: "#60a5fa",
+    desc: "Immersion dans votre univers, vos objectifs et votre marché cible pour poser des bases solides.",
+    icon: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>),
+  },
+  {
+    num: "02", title: "Design", color: "#a78bfa",
+    desc: "Maquettes et prototypes itératifs. Vous validez chaque étape avant que le développement commence.",
+    icon: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
+  },
+  {
+    num: "03", title: "Développement", color: "#34d399",
+    desc: "Code robuste et scalable. Tests rigoureux, performances optimisées avant chaque livraison.",
+    icon: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>),
+  },
+  {
+    num: "04", title: "Lancement", color: "#fb923c",
+    desc: "Mise en ligne soignée avec suivi des métriques et support réactif post-launch.",
+    icon: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>),
+  },
 ];
 const expertises = [
   {
@@ -251,6 +268,13 @@ export default function Home() {
       }, 350);
     }, 3000);
     return () => clearInterval(timer);
+  }, []);
+
+  /* Expertise word cycling */
+  const [expIdx, setExpIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setExpIdx((i) => (i + 1) % EXPERTISE_WORDS.length), 2200);
+    return () => clearInterval(t);
   }, []);
 
   return (
@@ -544,24 +568,47 @@ export default function Home() {
           <div>
             <p className="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Nos expertises</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-100 leading-tight">
-              Tout ce dont vous avez<br className="hidden sm:block" /> besoin, sous un même toit
+              Experts en
+              <span
+                className="ml-3 relative inline-block overflow-hidden align-middle"
+                style={{ height: "1.15em" }}
+              >
+                <span
+                  key={expIdx}
+                  className="gradient-text absolute left-0 top-0 whitespace-nowrap animate-expertise-word"
+                >
+                  {EXPERTISE_WORDS[expIdx]}
+                </span>
+              </span>
             </h2>
           </div>
-          <span className="hidden md:flex items-center gap-2 text-xs text-slate-600 pb-1">
-            Faites défiler
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
+          <div className="hidden md:flex items-center gap-0.5 pb-1 opacity-50">
+            {[0, 1, 2].map((i) => (
+              <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400 animate-scroll-chevron" style={{ animationDelay: `${i * 180}ms` }} aria-hidden="true">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            ))}
+          </div>
         </div>
 
         {/* Bandeau scrollable */}
         <div className="relative">
-          {/* Fondu droit — indique le scroll */}
-          <div className="pointer-events-none absolute right-0 top-0 bottom-4 w-24 z-10"
-            style={{ background: "linear-gradient(to left, var(--bg), transparent)" }}
+          {/* Fondu + chevrons animés à droite */}
+          <div
+            className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 z-10 flex items-center justify-end pr-4"
+            style={{ background: "linear-gradient(to left, var(--bg) 40%, transparent)" }}
             aria-hidden="true"
-          />
+          >
+            <div className="flex gap-0.5">
+              {[0, 1, 2].map((i) => (
+                <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400 animate-scroll-chevron" style={{ animationDelay: `${i * 180}ms` }}>
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              ))}
+            </div>
+          </div>
 
-          <div className="pl-6 md:pl-[calc((100vw-72rem)/2+1.5rem)] overflow-x-auto scrollbar-none pb-6">
+          <div className="pl-6 md:pl-[calc((100vw-72rem)/2+1.5rem)] overflow-x-auto scrollbar-none">
             <div className="flex gap-5 w-max pr-24">
 
               {/* Card intro */}
@@ -664,22 +711,45 @@ export default function Home() {
               <span className="gradient-text">transparent et éprouvé</span>
             </h2>
           </div>
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
             <div
-              className="hidden md:block absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
+              className="hidden md:block absolute top-9 left-[calc(12.5%+20px)] right-[calc(12.5%+20px)] h-px"
+              style={{ background: "linear-gradient(to right, #60a5fa35, #a78bfa35, #34d39935, #fb923c35)" }}
               aria-hidden="true"
             />
             {processSteps.map((step, i) => (
-              <div
-                key={step.num}
-                className="reveal flex flex-col items-center md:items-start text-center md:text-left"
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <div className="relative z-10 w-14 h-14 rounded-2xl glass flex items-center justify-center mb-5">
-                  <span className="gradient-text font-bold text-lg">{step.num}</span>
+              <div key={step.num} className="reveal" style={{ transitionDelay: `${i * 100}ms` }}>
+                <div
+                  className="card-service relative overflow-hidden h-full p-6"
+                  style={{ borderTop: `2px solid ${step.color}` }}
+                >
+                  {/* Glow de fond */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{ background: `radial-gradient(ellipse at 50% 0%, ${step.color}0e 0%, transparent 65%)` }}
+                    aria-hidden="true"
+                  />
+                  {/* Grand numéro fané */}
+                  <div
+                    className="absolute -bottom-2 -right-1 text-[7rem] font-black leading-none select-none pointer-events-none"
+                    style={{ color: `${step.color}12` }}
+                  >
+                    {step.num}
+                  </div>
+                  {/* Icône */}
+                  <div
+                    className="relative z-10 w-10 h-10 rounded-xl flex items-center justify-center mb-5"
+                    style={{ background: `${step.color}18`, color: step.color }}
+                  >
+                    {step.icon}
+                  </div>
+                  {/* Label étape */}
+                  <div className="text-[10px] font-bold tracking-[0.15em] uppercase mb-2" style={{ color: step.color }}>
+                    Étape {step.num}
+                  </div>
+                  <h3 className="font-black text-slate-100 mb-3 text-base relative z-10">{step.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed relative z-10">{step.desc}</p>
                 </div>
-                <h3 className="font-semibold text-slate-100 mb-2">{step.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -773,23 +843,26 @@ export default function Home() {
             className="reveal rounded-2xl sm:rounded-3xl p-px"
             style={{ background: "linear-gradient(135deg, rgba(96,165,250,0.5), rgba(167,139,250,0.5))" }}
           >
-            <div className="reveal relative overflow-hidden rounded-[calc(1rem-1px)] sm:rounded-[calc(1.5rem-1px)] px-6 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20 text-center" style={{ background: "var(--surface)" }}>
+            <div className="relative overflow-hidden rounded-[calc(1rem-1px)] sm:rounded-[calc(1.5rem-1px)] px-6 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20 text-center" style={{ background: "var(--surface)" }}>
               <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-blue-600 blur-[100px] opacity-10 pointer-events-none" aria-hidden="true" />
               <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-violet-600 blur-[100px] opacity-10 pointer-events-none" aria-hidden="true" />
-              <p className="relative text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-5">Travaillons ensemble</p>
+              <div className="relative inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5 text-[11px] font-bold tracking-[0.15em] uppercase" style={{ background: "rgba(96,165,250,0.1)", color: "#60a5fa" }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                Disponibles dans votre région
+              </div>
               <h2 className="relative text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-5 leading-tight text-slate-100">
-                Prêt à créer quelque chose{" "}
-                <span className="gradient-text">d&apos;exceptionnel ?</span>
+                Un projet ? On se voit{" "}
+                <span className="gradient-text">autour d&apos;un café</span>
               </h2>
-              <p className="relative text-slate-500 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-                Partagez votre vision. Nous vous répondons sous 24h avec une proposition personnalisée et sans engagement.
+              <p className="relative text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
+                On est basés près de chez vous et on préfère se rencontrer en personne. Un échange simple, sans jargon — juste une conversation sur ce que vous voulez construire.
               </p>
               <div className="relative flex flex-col sm:flex-row gap-3 justify-center items-center w-full">
                 <a
                   href="mailto:lucasaksu@gmail.com"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold px-8 py-4 rounded-xl text-base hover:opacity-85 transition-opacity duration-200 cursor-pointer shadow-[0_0_40px_-8px_rgba(96,165,250,0.5)]"
                 >
-                  Démarrer un projet <IconArrow />
+                  Prendre rendez-vous <IconArrow />
                 </a>
                 <a
                   href="mailto:lucasaksu@gmail.com"

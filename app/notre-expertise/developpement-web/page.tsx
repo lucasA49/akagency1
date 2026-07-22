@@ -45,7 +45,7 @@ const stats = [
   { value: "100/100", label: "Score Lighthouse Performance" },
 ];
 
-const metrics = [
+const metrics = [ 
   { label: "Uptime",      value: "99.9%", color: "#34d399", bar: 99.9 },
   { label: "LCP",         value: "0.8s",  color: "#60a5fa", bar: 92   },
   { label: "Performance", value: "100",   color: ACCENT,    bar: 100  },
@@ -160,7 +160,7 @@ export default function DeveloppementWebPage() {
             </h2>
           </div>
           <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            <div className="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" aria-hidden="true" />
+            <div className="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" aria-hidden="true" />
             {steps.map((s) => (
               <div key={s.num} className="flex flex-col gap-4">
                 <div className="relative z-10 w-12 h-12 rounded-2xl glass flex items-center justify-center" style={{ border: `1px solid ${ACCENT}30` }}>
