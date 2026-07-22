@@ -149,10 +149,10 @@ const IconX = () => (
 /* ─── Data ─── */
 const HERO_WORDS = ["mémorables.", "performantes.", "qui convertissent."];
 const services = [
-  { icon: <IconLayout />, title: "Web Design", desc: "Interfaces pixel-perfect qui convertissent. Chaque détail pensé avec intention, de la typographie aux micro-interactions." },
-  { icon: <IconCode />, title: "Développement", desc: "Code propre, performant et scalable. Applications Next.js ultra-rapides, optimisées Core Web Vitals." },
-  { icon: <IconDiamond />, title: "Identité de marque", desc: "Une identité visuelle cohérente et mémorable. Systèmes de design complets, logos et guidelines." },
-  { icon: <IconChart />, title: "Stratégie digitale", desc: "Analyse, positionnement et roadmap mesurable. Des décisions basées sur les données, pas des suppositions." },
+  { icon: <IconLayout />,  title: "Web Design",        desc: "Interfaces pixel-perfect qui convertissent. Chaque détail pensé avec intention, de la typographie aux micro-interactions.", color: "#60a5fa", href: "/notre-expertise/web-design"        },
+  { icon: <IconCode />,    title: "Développement",     desc: "Code propre, performant et scalable. Applications Next.js ultra-rapides, optimisées Core Web Vitals.",                 color: "#a78bfa", href: "/notre-expertise/developpement-web" },
+  { icon: <IconDiamond />, title: "Identité de marque",desc: "Une identité visuelle cohérente et mémorable. Systèmes de design complets, logos et guidelines.",                     color: "#34d399", href: "/notre-expertise/web-design"        },
+  { icon: <IconChart />,   title: "Stratégie digitale",desc: "Analyse, positionnement et roadmap mesurable. Des décisions basées sur les données, pas des suppositions.",            color: "#fb923c", href: "/notre-expertise"                   },
 ];
 const processSteps = [
   { num: "01", title: "Découverte", desc: "Immersion dans votre univers, vos objectifs et votre marché cible pour poser des bases solides." },
@@ -166,42 +166,42 @@ const expertises = [
     icon: <IconSEO />,
     title: "Référencement naturel",
     desc: "Référencer votre site est primordial pour acquérir de nouveaux clients. Notre équipe vous accompagne dans la stratégie SEO et vous fait gagner des parts de marché.",
-    href: "#contact",
+    href: "/notre-expertise/seo",
   },
   {
     color: "#f9a3a5",
     icon: <IconUX />,
     title: "UX / UI Design",
     desc: "Nos experts analysent vos problématiques et vous apportent des solutions concrètes pour améliorer l'expérience de vos utilisateurs et booster vos conversions.",
-    href: "#contact",
+    href: "/notre-expertise/web-design",
   },
   {
     color: "#84e3c7",
     icon: <IconSocial />,
     title: "Agence Social Media",
     desc: "Notre community manager gère vos réseaux sociaux pour promouvoir votre marque, augmenter votre notoriété et attirer de nouveaux clients qualifiés.",
-    href: "#contact",
+    href: "/notre-expertise",
   },
   {
     color: "#a78bfa",
     icon: <IconShop />,
     title: "E-commerce",
     desc: "Boutiques en ligne performantes et optimisées pour maximiser vos ventes. De Shopify à Next.js Commerce, on choisit la stack idéale pour votre business.",
-    href: "#contact",
+    href: "/notre-expertise/site-ecommerce",
   },
   {
     color: "#f9a3a5",
     icon: <IconMail />,
     title: "Email Marketing",
     desc: "Campagnes email ciblées, automatisations et newsletters qui convertissent. Un canal direct et rentable pour fidéliser votre audience.",
-    href: "#contact",
+    href: "/notre-expertise",
   },
 ];
 
 const works = [
-  { tag: "E-commerce", title: "Luxe & Co.", desc: "Refonte complète d'une boutique mode premium. +180% de conversions, -40% de bounce rate.", accent: "from-blue-600/20 to-indigo-600/20", bar: "from-blue-500/50 to-indigo-500/50" },
-  { tag: "SaaS B2B", title: "FlowDesk", desc: "Plateforme de gestion de projet B2B. Design system sur-mesure pour 12 000 utilisateurs.", accent: "from-violet-600/20 to-purple-600/20", bar: "from-violet-500/50 to-purple-500/50" },
-  { tag: "Portfolio", title: "Studio Laval", desc: "Site vitrine pour studio d'architecture. Sélectionné par Awwwards, +300% de leads entrants.", accent: "from-indigo-600/20 to-blue-600/20", bar: "from-indigo-500/50 to-blue-500/50" },
+  { tag: "E-commerce", title: "Luxe & Co.",    desc: "Refonte complète d'une boutique mode premium. +180% de conversions, -40% de bounce rate.", accent: "from-blue-600/20 to-indigo-600/20",   bar: "from-blue-500/50 to-indigo-500/50",   metric: "+180% conversions" },
+  { tag: "SaaS B2B",   title: "FlowDesk",      desc: "Plateforme de gestion de projet B2B. Design system sur-mesure pour 12 000 utilisateurs.", accent: "from-violet-600/20 to-purple-600/20", bar: "from-violet-500/50 to-purple-500/50", metric: "12k utilisateurs" },
+  { tag: "Portfolio",  title: "Studio Laval",  desc: "Site vitrine pour studio d'architecture. Sélectionné par Awwwards, +300% de leads entrants.", accent: "from-indigo-600/20 to-blue-600/20",  bar: "from-indigo-500/50 to-blue-500/50",  metric: "+300% leads" },
 ];
 
 /* ─── Page ─── */
@@ -361,15 +361,15 @@ export default function Home() {
           </div>
 
           {/* Headline */}
-          <h1 className="animate-fade-in-up delay-100 text-[2.4rem] sm:text-5xl md:text-[76px] font-bold tracking-tight leading-[1.08] text-slate-100 mb-2 sm:mb-3">
+          <h1 className="animate-fade-in-up delay-100 text-[2.4rem] sm:text-5xl md:text-[76px] font-black tracking-tight leading-[1.08] text-slate-100 mb-2 sm:mb-3">
             Nous créons des
           </h1>
-          <h1 className="animate-fade-in-up delay-200 text-[2.4rem] sm:text-5xl md:text-[76px] font-bold tracking-tight leading-[1.08] text-slate-100 mb-2 sm:mb-3">
+          <h1 className="animate-fade-in-up delay-200 text-[2.4rem] sm:text-5xl md:text-[76px] font-black tracking-tight leading-[1.08] text-slate-100 mb-2 sm:mb-3">
             expériences digitales
           </h1>
           <div className="animate-fade-in-up delay-300 h-[1.3em] mb-6 sm:mb-8 overflow-hidden">
             <span
-              className="gradient-text text-[2.4rem] sm:text-5xl md:text-[76px] font-bold tracking-tight leading-[1.08] inline-block"
+              className="gradient-text text-[2.4rem] sm:text-5xl md:text-[76px] font-black tracking-tight leading-[1.08] inline-block"
               style={{
                 opacity: wordVisible ? 1 : 0,
                 transform: wordVisible ? "translateY(0)" : "translateY(-12px)",
@@ -404,11 +404,11 @@ export default function Home() {
 
           {/* Social proof */}
           <div className="animate-fade-in-up delay-600 flex items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-slate-600 mb-12 sm:mb-16">
-            <span><strong className="text-slate-300 font-semibold">50+</strong> projets</span>
+            <span><strong className="text-slate-300 font-semibold">120+</strong> projets</span>
             <span className="w-px h-3 bg-current opacity-20" />
-            <span><strong className="text-slate-300 font-semibold">30+</strong> clients</span>
+            <span><strong className="text-slate-300 font-semibold">98%</strong> satisfaction</span>
             <span className="w-px h-3 bg-current opacity-20" />
-            <span><strong className="text-slate-300 font-semibold">5★</strong> satisfaction</span>
+            <span><strong className="text-slate-300 font-semibold">5★</strong> sur Google</span>
           </div>
 
           {/* ── UI Mockup — caché sur mobile, visible à partir de sm ── */}
@@ -487,31 +487,32 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="reveal text-center mb-16">
             <p className="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-4">Ce que nous faisons</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-slate-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-slate-100">
               Des services pensés pour{" "}
               <span className="gradient-text">votre croissance</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((s, i) => (
-              <div
+              <a
                 key={s.title}
-                className="reveal card-service p-6 flex flex-col gap-5 cursor-default"
+                href={s.href}
+                className="reveal card-service p-6 flex flex-col gap-5 cursor-pointer group"
                 style={{ transitionDelay: `${i * 70}ms` }}
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/15 to-violet-500/15 border border-blue-500/15 flex items-center justify-center text-blue-400">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110" style={{ background: `${s.color}18`, border: `1px solid ${s.color}30`, color: s.color }}>
                   {s.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-100 mb-2">{s.title}</h3>
+                  <h3 className="font-bold text-slate-100 mb-2">{s.title}</h3>
                   <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
                 </div>
                 <div className="mt-auto">
-                  <span className="text-xs text-blue-400 flex items-center gap-1.5 font-medium opacity-70">
-                    En savoir plus <IconArrow />
+                  <span className="text-xs flex items-center gap-1.5 font-semibold transition-gap duration-200" style={{ color: s.color }}>
+                    Découvrir <IconArrow />
                   </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -520,15 +521,15 @@ export default function Home() {
       {/* ══ STATS ══ */}
       <div className="px-4 sm:px-6 pb-10">
         <div className="max-w-6xl mx-auto">
-          <div className="glass rounded-2xl sm:rounded-3xl px-6 sm:px-10 py-8 sm:py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal">
+          <div className="glass rounded-2xl sm:rounded-3xl px-6 sm:px-10 py-8 sm:py-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x reveal" style={{ borderColor: "var(--border)" }}>
             {[
-              { v: "50+", l: "Projets livrés" },
-              { v: "30+", l: "Clients satisfaits" },
-              { v: "5+",  l: "Années d'expérience" },
-              { v: "100%", l: "Taux de satisfaction" },
+              { v: "120+",  l: "Projets livrés" },
+              { v: "98%",   l: "Clients satisfaits" },
+              { v: "5 ans", l: "D'expérience" },
+              { v: "24h",   l: "Délai de réponse" },
             ].map((s, i) => (
-              <div key={i} className="flex flex-col items-center gap-1" style={{ transitionDelay: `${i * 80}ms` }}>
-                <span className="text-4xl font-bold gradient-text">{s.v}</span>
+              <div key={i} className="flex flex-col items-center gap-1 md:px-6" style={{ transitionDelay: `${i * 80}ms` }}>
+                <span className="text-4xl sm:text-5xl font-black gradient-text">{s.v}</span>
                 <span className="text-xs text-slate-500 tracking-wide">{s.l}</span>
               </div>
             ))}
@@ -542,7 +543,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12 reveal flex items-end justify-between">
           <div>
             <p className="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Nos expertises</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-100 leading-tight">
               Tout ce dont vous avez<br className="hidden sm:block" /> besoin, sous un même toit
             </h2>
           </div>
@@ -658,7 +659,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="reveal text-center mb-12 md:mb-16">
             <p className="text-violet-400 text-xs font-semibold tracking-[0.2em] uppercase mb-4">Notre méthode</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-100">
               Un process{" "}
               <span className="gradient-text">transparent et éprouvé</span>
             </h2>
@@ -690,7 +691,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="reveal text-center mb-12 md:mb-16">
             <p className="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-4">Nos réalisations</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-slate-100">
               Des projets qui{" "}
               <span className="gradient-text">parlent d&apos;eux-mêmes</span>
             </h2>
@@ -703,6 +704,10 @@ export default function Home() {
                 style={{ transitionDelay: `${i * 90}ms` }}
               >
                 <div className={`relative h-48 sm:h-56 bg-gradient-to-br ${w.accent} overflow-hidden`}>
+                  {/* Metric badge */}
+                  <div className="absolute top-4 right-4 glass px-3 py-1.5 rounded-xl text-xs font-bold text-white border border-white/15 z-10">
+                    {w.metric}
+                  </div>
                   <div className="absolute inset-0 flex flex-col justify-center px-7 gap-2.5">
                     <div className={`h-3 w-2/3 rounded bg-gradient-to-r ${w.bar}`} />
                     <div className="h-2 w-1/2 rounded mk-bar-sm" />
@@ -731,25 +736,30 @@ export default function Home() {
       {/* ══ TESTIMONIAL ══ */}
       <section className="px-4 sm:px-6 py-16 md:py-20">
         <div className="max-w-6xl mx-auto">
-          <div className="reveal glass rounded-2xl sm:rounded-3xl px-6 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20 text-center relative overflow-hidden">
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-violet-600 blur-[80px] opacity-8 pointer-events-none" aria-hidden="true" />
-            <div className="text-[72px] sm:text-[96px] leading-none font-serif gradient-text select-none mb-2 opacity-25" aria-hidden="true">&ldquo;</div>
-            <blockquote className="relative text-lg sm:text-xl md:text-2xl font-medium text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
-              AK Agency a transformé notre présence en ligne en quelques semaines.
-              Le résultat dépasse toutes nos attentes —{" "}
-              <span className="gradient-text">visuellement impeccable</span> et avec des performances
-              qui ont boosté nos conversions de 180%.
-            </blockquote>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/25 to-violet-500/25 border border-white/10 flex items-center justify-center text-base font-bold text-slate-200">
-                S
-              </div>
-              <div className="text-left">
-                <div className="text-sm font-semibold text-slate-200">Sarah Kowalski</div>
-                <div className="text-xs text-slate-500">CMO, Luxe &amp; Co.</div>
-              </div>
-              <div className="flex gap-0.5 ml-2">
-                {Array.from({ length: 5 }).map((_, i) => <IconStar key={i} />)}
+          <div
+            className="reveal rounded-2xl sm:rounded-3xl p-px"
+            style={{ background: "linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3), rgba(96,165,250,0.1))" }}
+          >
+            <div className="rounded-[calc(1rem-1px)] sm:rounded-[calc(1.5rem-1px)] px-6 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20 text-center relative overflow-hidden" style={{ background: "var(--surface)" }}>
+              <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-violet-600 blur-[90px] opacity-[0.07] pointer-events-none" aria-hidden="true" />
+              <div className="text-[72px] sm:text-[96px] leading-none font-serif gradient-text select-none mb-2 opacity-20" aria-hidden="true">&ldquo;</div>
+              <blockquote className="relative text-lg sm:text-xl md:text-2xl font-medium text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
+                AK Agency a transformé notre présence en ligne en quelques semaines.
+                Le résultat dépasse toutes nos attentes —{" "}
+                <span className="gradient-text">visuellement impeccable</span> et avec des performances
+                qui ont boosté nos conversions de 180%.
+              </blockquote>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center text-base font-black text-white shadow-[0_0_16px_-2px_rgba(96,165,250,0.5)]">
+                  S
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-bold text-slate-200">Sarah Kowalski</div>
+                  <div className="text-xs text-slate-500">CMO, Luxe &amp; Co.</div>
+                </div>
+                <div className="flex gap-0.5 ml-2">
+                  {Array.from({ length: 5 }).map((_, i) => <IconStar key={i} />)}
+                </div>
               </div>
             </div>
           </div>
@@ -759,30 +769,35 @@ export default function Home() {
       {/* ══ CONTACT ══ */}
       <section id="contact" className="px-4 sm:px-6 py-16 md:py-28">
         <div className="max-w-5xl mx-auto">
-          <div className="reveal relative overflow-hidden glass rounded-2xl sm:rounded-3xl px-6 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20 text-center">
-            <div className="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-blue-600 blur-[80px] opacity-10 pointer-events-none" aria-hidden="true" />
-            <div className="absolute -bottom-20 -right-20 w-60 h-60 rounded-full bg-violet-600 blur-[80px] opacity-10 pointer-events-none" aria-hidden="true" />
-            <p className="relative text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-5">Travaillons ensemble</p>
-            <h2 className="relative text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-tight text-slate-100">
-              Prêt à créer quelque chose{" "}
-              <span className="gradient-text">d&apos;exceptionnel ?</span>
-            </h2>
-            <p className="relative text-slate-500 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-              Partagez votre vision. Nous vous répondons sous 24h avec une proposition personnalisée et sans engagement.
-            </p>
-            <div className="relative flex flex-col sm:flex-row gap-3 justify-center items-center w-full">
-              <a
-                href="mailto:lucasaksu@gmail.com"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold px-8 py-4 rounded-xl text-base hover:opacity-85 transition-opacity duration-200 cursor-pointer shadow-[0_0_40px_-8px_rgba(96,165,250,0.5)]"
-              >
-                Démarrer un projet <IconArrow />
-              </a>
-              <a
-                href="mailto:lucasaksu@gmail.com"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass text-slate-400 hover:text-slate-200 font-medium px-6 py-4 rounded-xl transition-colors duration-200 cursor-pointer break-all"
-              >
-                lucasaksu@gmail.com
-              </a>
+          <div
+            className="reveal rounded-2xl sm:rounded-3xl p-px"
+            style={{ background: "linear-gradient(135deg, rgba(96,165,250,0.5), rgba(167,139,250,0.5))" }}
+          >
+            <div className="reveal relative overflow-hidden rounded-[calc(1rem-1px)] sm:rounded-[calc(1.5rem-1px)] px-6 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20 text-center" style={{ background: "var(--surface)" }}>
+              <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-blue-600 blur-[100px] opacity-10 pointer-events-none" aria-hidden="true" />
+              <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-violet-600 blur-[100px] opacity-10 pointer-events-none" aria-hidden="true" />
+              <p className="relative text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-5">Travaillons ensemble</p>
+              <h2 className="relative text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-5 leading-tight text-slate-100">
+                Prêt à créer quelque chose{" "}
+                <span className="gradient-text">d&apos;exceptionnel ?</span>
+              </h2>
+              <p className="relative text-slate-500 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
+                Partagez votre vision. Nous vous répondons sous 24h avec une proposition personnalisée et sans engagement.
+              </p>
+              <div className="relative flex flex-col sm:flex-row gap-3 justify-center items-center w-full">
+                <a
+                  href="mailto:lucasaksu@gmail.com"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold px-8 py-4 rounded-xl text-base hover:opacity-85 transition-opacity duration-200 cursor-pointer shadow-[0_0_40px_-8px_rgba(96,165,250,0.5)]"
+                >
+                  Démarrer un projet <IconArrow />
+                </a>
+                <a
+                  href="mailto:lucasaksu@gmail.com"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass text-slate-400 hover:text-slate-200 font-medium px-6 py-4 rounded-xl transition-colors duration-200 cursor-pointer break-all"
+                >
+                  lucasaksu@gmail.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
